@@ -1,2 +1,3 @@
 neuralcoref --no-binary neuralcoref
+flask==-1.1.2
 spacy==2.1.3

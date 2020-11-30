@@ -7,6 +7,9 @@ nlp = spacy.load('en')
 neuralcoref.add_to_pipe(nlp)
 
 
+
+
+
 def match_tokens(doc, match_words):
     matcher = Matcher(nlp.vocab)
     for match_word in match_words:
@@ -25,10 +28,3 @@ def get_sentences(doc, match_words):
                     yield (mention.sent, mention, c_cluster)
         else:
             yield (m_token.sent, doc[match[1]:match[2]], None)
-
-
-if __name__ == "__main__":
-    doc = nlp(u'Hey ! have you seen what John has done yesterday? Absolutely appaling that a director would behave like that ... Anyway, I hope he gets reprimanded for it.')
-
-    for match_sent in get_sentences(doc, ["John", "director"]):
-        print(match_sent)
