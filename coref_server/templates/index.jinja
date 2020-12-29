@@ -11,6 +11,7 @@
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
   rel="stylesheet">
 </link>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/highlight.css') }}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -18,7 +19,7 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-color:#009ED8;">
   <h1>SARee</h1>
 
   <p>A subject-access-request entity extraction system</p>
@@ -29,6 +30,7 @@
     <div class="col-auto">
       <form>
         <div class="form-group">
+          <div class="text_display" id="text_output"></div>
           <label for="TextToAnalyse"><b>Text to analyse</b></label>
           <textarea
             id="TextToAnalyse"
@@ -44,7 +46,7 @@
         <div class="form-row align-items-center">
           <div class="col-auto">
             <input
-              name="expression",
+              name="expression_0",
               id="inlineFormInput"
               class="form-control mb-2"
               type="text"
@@ -54,7 +56,7 @@
           <div class="col-auto">
             <div class="form-check mb-2">
               <input
-                name="case_sensitive",
+                name="case_sensitive_0",
                 id="autoSizingCheck"
                 class="form-check-input"
                 type="checkbox"/>
@@ -91,5 +93,5 @@
   </div>
 </div>
 
-<script type="text/javascript" src="{{ url_for('static', filename='jquery.serializeToJSON.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='form.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery/jquery.serializeToJSON.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery/form.js') }}"></script>

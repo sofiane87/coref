@@ -28,7 +28,7 @@ $(document).ready(function () {
             "dataType": "json",
             "data": {"result": JSON.stringify({"text": target_text, "expressions": form_fields})},
             "success": function(result) {
-                console.log(result)
+                $("div#text_output").html(result["html"])
             },
             error: function(xhr, resp, text) {
                     console.log(xhr, resp, text);
